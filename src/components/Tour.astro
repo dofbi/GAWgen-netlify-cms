@@ -1,0 +1,59 @@
+---
+import { Markdown } from 'astro/components';
+const content = await fetch('README.md').then(res => res.text());
+---
+
+<article>
+	<div class="banner">
+		<p>Github Action Workflow generator from Netlify CMS</p>
+		<strong><a href="/admin">Try it!</a></strong>
+	</div>
+
+	<section>
+		<Markdown content={content} />
+	</section>
+
+</article>
+
+<style>
+	article {
+		padding-top: 2em;
+		line-height: 1.5;
+	}
+	section {
+		margin-top: 2em;
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+		max-width: 70ch;
+	}
+
+	.banner {
+		text-align: center;
+		font-size: 1.2rem;
+		background: var(--color-light);
+		padding: 1em 1.5em;
+		padding-left: 0.75em;
+		border-radius: 4px;
+	}
+
+	pre,
+	code {
+		font-family: var(--font-mono);
+		background: var(--color-light);
+		border-radius: 4px;
+	}
+
+	pre {
+		padding: 1em 1.5em;
+	}
+
+	.tree {
+		line-height: 1.2;
+	}
+
+	code:not(.tree) {
+		padding: 0.125em;
+		margin: 0 -0.125em;
+	}
+</style>

@@ -1,0 +1,32 @@
+backend:
+  #name: github # Local
+  name: git-gateway # Prod
+  branch: main
+
+media_folder: 'public'
+
+collections:
+  - name: "action"
+    label: "Github Action Workflow"
+    folder: '.github/workflows'
+    create: true
+    slug: '{{slug}}'
+    extension: 'yml'
+    fields:
+      - {label: name, name: name, widget: string, required: true}
+      - {label: "on", name: "on", widget: object, collapsed: true, fields: [
+        {label: "push", name: "push", widget: object, collapsed: true, fields: [
+          {label: "branches", name: "branches", widget: "list", field:
+            {label: "name", name: "name", widget: "string"}
+          }
+        ]},
+        {label: "schedule", name: "schedule", widget: "list", collapsed: true, fields: [ 
+          {label: "cron", name: "cron", widget: "string"}]
+        }
+      ]}
+      - {label: "jobs", name: "jobs", widget: object, collapsed: true, fields: [
+          {label: "build", name: "build", widget: object, collapsed: true, fields: [
+            {label: "runs-on", name: "runs-on", widget: "select", options: ["windows-latest", "windows-2022", "windows-2019", "windows-2016", "ubuntu-latest", "ubuntu-20.04", "ubuntu-18.04", "macos-latest", "macos-11", "macos-10.15"]},
+            {label: "steps", name: "steps", widget: "text"}
+          ]}
+        ]} 

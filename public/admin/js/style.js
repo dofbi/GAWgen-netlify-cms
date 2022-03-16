@@ -1,0 +1,1 @@
+CMS.registerPreviewStyle("./css/style.css");

@@ -1,0 +1,39 @@
+html,
+body {
+  color: #fff;
+  font-size: 14px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+  padding: 20px;
+  background-color: black;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  box-sizing: border-box;
+  text-indent: initial;
+  border-spacing: 2px;
+  border: 1px solid #fff;
+}
+
+th, td {
+  padding: 7px 5px;
+  font-size: 12px;
+  border-collapse: collapse;
+  border: 1px solid #fff;
+}
+
+th {
+  text-align: left;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #403838;
+}
+
+td {
+  font-size: 12px;
+  font-weight: normal;
+}

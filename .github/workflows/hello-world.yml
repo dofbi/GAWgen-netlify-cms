@@ -1,0 +1,13 @@
+name: Hello World
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: Run a one-line script
+        run: echo Hello, world!
