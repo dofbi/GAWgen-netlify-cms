@@ -27,6 +27,6 @@ collections:
       - {label: "jobs", name: "jobs", widget: object, collapsed: true, fields: [
           {label: "build", name: "build", widget: object, collapsed: true, fields: [
             {label: "runs-on", name: "runs-on", widget: "select", options: ["windows-latest", "windows-2022", "windows-2019", "windows-2016", "ubuntu-latest", "ubuntu-20.04", "ubuntu-18.04", "macos-latest", "macos-11", "macos-10.15"]},
-            {label: "steps", name: "steps", widget: "text"}
+            {label: "steps", name: "steps", widget: "steps"}
           ]}
         ]} 
