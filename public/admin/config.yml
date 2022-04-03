@@ -1,7 +1,7 @@
 backend:
   #name: github # Local
   name: git-gateway # Prod
-  branch: main
+  branch: feature/list-widget-variable-types
 
 media_folder: 'public'
 
@@ -24,9 +24,35 @@ collections:
           {label: "cron", name: "cron", widget: "string"}]
         }
       ]}
-      - {label: "jobs", name: "jobs", widget: object, collapsed: true, fields: [
-          {label: "build", name: "build", widget: object, collapsed: true, fields: [
-            {label: "runs-on", name: "runs-on", widget: "select", options: ["windows-latest", "windows-2022", "windows-2019", "windows-2016", "ubuntu-latest", "ubuntu-20.04", "ubuntu-18.04", "macos-latest", "macos-11", "macos-10.15"]},
-            {label: "steps", name: "steps", widget: "steps"}
-          ]}
-        ]} 
+      - label: "jobs"
+        name: "jobs"
+        widget: "object"
+        collapsed: true
+        fields:
+          - label: "build"
+            name: "build"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "runs-on"
+                name: "runs-on"
+                widget: "select"
+                options: ["windows-latest", "windows-2022", "windows-2019", "windows-2016", "ubuntu-latest", "ubuntu-20.04", "ubuntu-18.04", "macos-latest", "macos-11", "macos-10.15"]
+              - label: "steps"
+                name: "steps"
+                widget: "list"
+                types:
+                  - label: "uses"
+                    name: "uses"
+                    widget: "object"
+                    summary: "{{fields.name}}"
+                    fields:
+                      - {label: "name", name: "name", widget: "string"}
+                      - {label: "uses", name: "uses", widget: "string"}
+                  - label: "run"
+                    name: "run"
+                    widget: "object"
+                    summary: "{{fields.name}}"
+                    fields:
+                      - {label: "name", name: "name", widget: "string"}
+                      - {label: "run", name: "run", widget: "string"}

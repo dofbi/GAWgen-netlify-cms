@@ -37,3 +37,18 @@ td {
   font-size: 12px;
   font-weight: normal;
 }
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  min-height: 45em;
+  overflow: auto;
+  border: none;
+  resize: none;
+  font-size: 12px;
+  font-weight: normal;
+  background-color: #403838;
+  color: #fff;
+  -moz-tab-size: 2; /* Firefox */
+  tab-size: 2;
+}

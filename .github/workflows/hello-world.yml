@@ -7,7 +7,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository code
+      - type: uses
+        name: Check out repository code
         uses: actions/checkout@v2
-      - name: Run a one-line script
+      - type: run
+        name: Run a one-line script
         run: echo Hello, world!
